@@ -1,0 +1,81 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+const int MAX = 100;
+
+struct Student
+{
+    int id;
+    string name;
+    int age;
+    string department;
+    float grade;
+};
+
+Student students[MAX];
+int countStudents = 0;
+
+void addStudent();
+void displayStudents();
+void searchStudent();
+void updateStudent();
+void deleteStudent();
+void showTopStudent();
+void showAverage();
+
+int main()
+{
+    int choice;
+
+    do
+    {
+        cout << "\n=====================================\n";
+        cout << "   STUDENT MANAGEMENT SYSTEM\n";
+        cout << "=====================================\n";
+        cout << "1. Add Student\n";
+        cout << "2. Display Students\n";
+        cout << "3. Search Student\n";
+        cout << "4. Update Student\n";
+        cout << "5. Delete Student\n";
+        cout << "6. Show Top Student\n";
+        cout << "7. Show Average Grade\n";
+        cout << "8. Exit\n";
+        cout << "=====================================\n";
+        cout << "Enter Choice: ";
+        cin >> choice;
+
+        switch(choice)
+        {
+        case 1:
+            addStudent();
+            break;
+        case 2:
+            displayStudents();
+            break;
+        case 3:
+            searchStudent();
+            break;
+        case 4:
+            updateStudent();
+            break;
+        case 5:
+            deleteStudent();
+            break;
+        case 6:
+            showTopStudent();
+            break;
+        case 7:
+            showAverage();
+            break;
+        case 8:
+            cout << "Good Bye...\n";
+            break;
+        default:
+            cout << "Invalid Choice!\n";
+        }
+
+    } while(choice != 8);
+
+    return 0;
+}
